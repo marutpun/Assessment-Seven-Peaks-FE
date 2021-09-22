@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.Favorite_heading {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Favorite_heading {
+    font-size: 2.5rem;
+  }
+}
+
+.Favorite_wrapper {
+  @extend %gridContainer;
+}
+
+.Favorite_cell {
+  @extend %gridCell;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Favorite_cell {
+    width: 33.33333%;
+  }
+}
+
+.Favorite_card {
+  @extend %cardStyle;
+}
+
+.Favorite_body {
+  padding: 1rem;
+  position: relative;
+  background-color: $primary-color;
+
+  h3 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+.Favorite_overlay {
+  padding: 1rem;
+  background-color: rgba(9, 53, 123, 0.8);
+  position: absolute;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

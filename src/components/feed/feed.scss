@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+
+// @for $i from 0 through 6 {
+//   .Feed_section {
+//     &:nth-child(#{$i + 1}) h2 {
+//       border-bottom-color: hsl($i * 60, 100%, 44%);
+//     }
+//   }
+// }
+
+.Feed_header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Feed_header {
+    flex-direction: row;
+  }
+}
+
+.Feed_tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Feed_btnBookmark {
+  background-color: $primary-color-darkest;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0rem;
+  padding: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  color: $white;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Feed_tools {
+    justify-content: center;
+  }
+  .Feed_btnBookmark {
+    margin-right: 0.5rem;
+  }
+}
+
+.Feed_select {
+  height: 2.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid $black;
+}
+
+.Feed_heading {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+  // border-bottom: 3px solid;
+  // border-bottom-color: $black;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Feed_heading {
+    font-size: 2.5rem;
+  }
+}
+
+.Feed_wrapper {
+  @extend %gridContainer;
+}
+
+.Feed_cell {
+  @extend %gridCell;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Feed_cell {
+    width: 33.33333%;
+  }
+}
+
+.Feed_card {
+  @extend %cardStyle;
+}
+
+.Feed_cardBody {
+  padding: 1rem;
+  position: relative;
+  background-color: $primary-color;
+
+  h3 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+.Feed_overlay {
+  padding: 1rem;
+  background-color: rgba(9, 53, 123, 0.8);
+  position: absolute;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

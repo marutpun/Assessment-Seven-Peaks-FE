@@ -1,0 +1,32 @@
+// Shade
+$primary-color: hsl(217, 86%, 37%);
+
+$primary-color-dark: scale-color($primary-color, $lightness: -10%);
+$primary-color-darker: scale-color($primary-color, $lightness: -15%);
+$primary-color-darkest: scale-color($primary-color, $lightness: -30%);
+$primary-color-light: scale-color($primary-color, $lightness: +10%);
+$primary-color-lighter: scale-color($primary-color, $lightness: +15%);
+$primary-color-lightest: scale-color($primary-color, $lightness: +30%);
+
+$white: #fff;
+$black: #333;
+
+%cardStyle {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+%gridCell {
+  padding: 0 0.625rem;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+%gridContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+
+.Article {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Article {
+    flex-direction: row;
+    min-height: 50vh;
+  }
+}
+
+.Article_main {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.Article_main {
+  width: 100%;
+}
+
+.Article_aside {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media print, screen and (min-width: 40em) {
+  .Article_main {
+    width: 66.66667%;
+  }
+
+  .Article_aside {
+    width: 33.33333%;
+  }
+}
+
+.Article_imgWrapper {
+  padding: 1rem;
+  background-color: $primary-color-darkest;
+}
+
+.Article_btnBookmark {
+  margin: 0 0 1rem;
+  padding: 0 0.5rem;
+  height: 2rem;
+  display: inline-block;
+  background-color: $primary-color-darkest;
+  color: $white;
+  width: 160px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
