@@ -10,30 +10,53 @@ import { bookmarkFilter } from '../utils';
 
 export default function Articles() {
   const { slug } = useParams();
+  const dispatch = useDispatch();
   const content = useSelector((state) => state.newsFeed);
   const bookmarkList = useSelector((state) => state.bookmark);
-  const dispatch = useDispatch();
 
   const revertUrl = slug.replaceAll('_', '/');
-
-  const matchId = content.filter((article) => {
+  const articleId = content.filter((article) => {
     if (article.id === revertUrl) {
-      return article;
+      return article.id;
+    }
+  });
+
+  /**
+   * Check if an array contains any element of another array in JavaScript
+   * https://stackoverflow.com/questions/16312528/check-if-an-array-contains-any-element-of-another-array-in-javascript
+   *
+   * article.id === bookmark.id ? true: false;
+   */
+
+  const isBookmark = bookmarkList.some((bookmarkId) => {
+    if (articleId.map((item) => item.id === bookmarkId)) {
+      return true;
+    } else if (articleId.map((item) => item.id !== bookmarkId)) {
+      return false;
     }
   });
 
   return (
     <Fragment>
-      {matchId.map((article) => {
+      {articleId.map((article) => {
         const datetime = new Date(article.webPublicationDate);
         return (
           <Article key={article.id}>
             <Article.Main>
-              <Article.Bookmark
-                onClick={() => dispatch(toggleBookmark(article.id))}
-              >
-                <img src={iconAddBookmark} alt="add" /> Add to bookmark
-              </Article.Bookmark>
+              {isBookmark ? (
+                <Article.Bookmark
+                  onClick={() => dispatch(toggleBookmark(article.id))}
+                >
+                  <img src={iconRemoveBookmark} alt="remove" /> Remove bookmark
+                </Article.Bookmark>
+              ) : (
+                <Article.Bookmark
+                  onClick={() => dispatch(toggleBookmark(article.id))}
+                >
+                  <img src={iconAddBookmark} alt="add" /> Add to bookmark
+                </Article.Bookmark>
+              )}
+
               <Article.DateTime time={article.webPublicationDate}>
                 {datetime.toString()}
               </Article.DateTime>

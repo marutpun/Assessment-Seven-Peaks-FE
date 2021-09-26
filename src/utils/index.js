@@ -60,6 +60,31 @@ export function selectionFilter(content = []) {
         title: 'Business',
         data: content?.filter((item) => item.sectionId === 'business'),
       },
+      {
+        id: nanoid(),
+        title: 'Life and Style',
+        data: content?.filter((item) => item.sectionId === 'lifeandstyle'),
+      },
+      {
+        id: nanoid(),
+        title: 'Culture',
+        data: content?.filter((item) => item.sectionId === 'culture'),
+      },
+      {
+        id: nanoid(),
+        title: 'Food',
+        data: content?.filter((item) => item.sectionId === 'food'),
+      },
+      {
+        id: nanoid(),
+        title: 'News',
+        data: content?.filter((item) => item.sectionId === 'news'),
+      },
+      {
+        id: nanoid(),
+        title: 'Television & Radio',
+        data: content?.filter((item) => item.sectionId === 'tv-and-radio'),
+      },
     ],
   };
 }
