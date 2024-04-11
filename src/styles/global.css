@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .Header,
+  .Footer {
+    @apply bg-azure-950 p-4;
+  }
+
+  .Header_inner {
+    @apply flex flex-col md:flex-row justify-between;
+  }
+
+  .Header__brand {
+    @apply max-h-[42px] self-center;
+  }
+
+  .Header__title {
+    @apply mt-4 md:mt-0 text-xl text-center md:text-3xl text-white;
+  }
+
+  .container {
+    @apply mx-auto px-4 w-full;
+  }
+}
