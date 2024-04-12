@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 const apiEndpoint = `https://content.guardianapis.com/search?api-key=`;
 const apiKey = Netlify.env.get('VITE_GUARDIAN_API_KEY');
 
