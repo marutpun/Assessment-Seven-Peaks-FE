@@ -1,9 +1,10 @@
 import Layout from './layouts/Layout';
+import FeedContainer from './containers/FeedContainer';
 
 export default function App() {
   return (
     <Layout>
-      <div className="container"></div>
+      <FeedContainer />
     </Layout>
   );
 }

@@ -8,7 +8,7 @@
     @apply bg-azure-950 p-4;
   }
 
-  .Header_inner {
+  .Header__inner {
     @apply flex flex-col md:flex-row justify-between;
   }
 
@@ -20,7 +20,59 @@
     @apply mt-4 md:mt-0 text-xl text-center md:text-3xl text-white;
   }
 
+  .Spinner {
+    @apply justify-center items-center flex;
+  }
+
+  .Spinner__ring {
+    @apply border-[6px] md:border-[12px] border-solid border-gray-300 border-b-azure-950 rounded-full w-14 md:w-28 h-14 md:h-28 animate-spin inline-block;
+  }
+
+  .FeedCard {
+    @apply flex-col mx-0 mb-4 flex cursor-pointer;
+  }
+
+  .FeedCard__inner {
+    box-shadow: 0 3px 4px #00000024, 0 3px 3px -2px #0003, 0 1px 8px #0000001f;
+  }
+
+  .FeedCard__body {
+    @apply bg-azure-900 p-4 relative;
+  }
+
+  .FeedCard__title {
+    @apply truncate text-white m-0 text-base;
+  }
+
+  .FeedCard__overlay {
+    @apply bg-azure-950/80 max-w-full p-4 absolute bottom-0 left-0 right-0;
+  }
+
+  .Footer__colophon {
+    @apply text-white text-base;
+  }
+
   .container {
     @apply mx-auto px-4 w-full;
+  }
+
+  .section {
+    @apply px-0 py-6;
+  }
+
+  .row {
+    @apply flex-wrap mt-0 -mx-3 flex;
+  }
+
+  .col {
+    @apply flex-none max-w-full mt-0 px-3;
+  }
+
+  .row-cols-1 > * {
+    @apply w-full;
+  }
+
+  .row-cols-md-4 > * {
+    @apply md:w-1/4;
   }
 }
