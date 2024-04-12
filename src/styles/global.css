@@ -52,6 +52,14 @@
     @apply text-white text-base;
   }
 
+  .wrapper {
+    @apply flex-col min-h-screen flex;
+  }
+
+  .main-wrapper {
+    @apply flex-col flex-[1_0_auto] flex justify-center;
+  }
+
   .container {
     @apply mx-auto px-4 w-full;
   }
